@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
 
 function App() {
+  const boxes = [];
+  for (let rows = 0; rows < 6; rows++) {
+    const newRow = [];
+    for (let cols = 0; cols < 5; cols++) {
+      newRow.push(<div className="wordbox" key={rows+"-"+cols}>A</div>);
+    }
+    boxes.push(newRow);
+  }
+  const [letter, setLetter] = useState(boxes);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Wordy</h1>
+      <div className="wordboxrow">
+        {letter.map((row, index) =>
+          row.map((col, index) => {
+            return col;
+          })
+        )}
+      </div>
     </div>
   );
 }

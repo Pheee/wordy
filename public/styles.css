@@ -1,0 +1,22 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.wordbox {
+    border: 2px solid white;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.wordboxrow {
+    /* display: flex;
+    align-items: center;
+    justify-content: space-around; */
+    display: grid;
+    grid-template-columns: 95px 95px 95px 95px 95px;
+    align-items: center;
+    grid-row-gap: 10px;
+  }
