@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import words from "./words";
+import Navbar from "./Navbar";
 
 class App extends Component {
   componentDidMount() {
@@ -169,9 +170,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Wordy</h1>
-        <div className="wordboxrow">
+      <div className="bg-dark">
+        <Navbar />
+        <div className="wordboxrow m-2">
           {this.state.boxes.map((row, index) =>
             row.map((col, index) => {
               return col;
@@ -187,7 +188,7 @@ class App extends Component {
             return (
               <button
                 type="button"
-                className="btn btn-secondary btn-lg"
+                className="btn btn-secondary btn-lg m-1"
                 key={key}
                 onClick={this.pressKey}
                 value={key}
@@ -203,7 +204,7 @@ class App extends Component {
             return (
               <button
                 type="button"
-                className="btn btn-secondary btn-lg"
+                className="btn btn-secondary btn-lg m-1"
                 key={key}
                 onClick={this.pressKey}
                 value={key}
@@ -219,7 +220,7 @@ class App extends Component {
             return (
               <button
                 type="button"
-                className="btn btn-secondary btn-lg"
+                className="btn btn-secondary btn-lg m-1"
                 key={key}
                 onClick={this.pressKey}
                 value={key}
